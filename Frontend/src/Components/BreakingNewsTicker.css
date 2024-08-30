@@ -1,0 +1,64 @@
+.ticker-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  border-radius: 25px; /* Increased border radius for more rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper box shadow for more depth */
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+}
+
+.ticker-label {
+  font-weight: bold;
+  margin-right: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: #facc15; /* Highlight color for the label */
+}
+
+.ticker-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.ticker {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  padding-right: 50px;
+  font-size: 1.2rem; /* Slightly larger font size */
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.ticker-item:hover {
+  color: #facc15; /* Highlight color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.separator {
+  color: #facc15; /* Highlight color for the separator */
+}
+
+@media (max-width: 768px) {
+  .ticker-container {
+    padding: 8px;
+  }
+
+  .ticker-item {
+    padding-right: 30px;
+    font-size: 1rem;
+  }
+
+  .ticker-label {
+    font-size: 1rem;
+  }
+}

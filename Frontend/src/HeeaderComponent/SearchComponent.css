@@ -1,0 +1,62 @@
+/* Container for search and close icons */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Search icon */
+.search-icon {
+  color: #212529;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Close icon */
+.close-icon {
+  color: #212529;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+/* Search form */
+#cse-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Search input */
+#cse-search-box input[type="text"] {
+  width: 25vw;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Submit button */
+#cse-search-box button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 50px;
+}
+
+#cse-search-box button i {
+  font-size: 1rem;
+}
+
+/* Change color on hover */
+#cse-search-box button:hover {
+  background-color: #0056b3;
+}

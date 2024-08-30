@@ -1,0 +1,105 @@
+.services-container {
+  background-color: #f7fafc;
+  margin: 1rem 0;
+  padding: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.services-section {
+  animation: zoom-in-down 0.6s ease-in-out;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.section-divider {
+  width: 9rem;
+  height: 2px;
+  background-color: #1e3a8a;
+  margin: 0.5rem auto;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #4a5568;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: justify;
+}
+
+@keyframes zoom-in-down {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.75rem;
+  }
+}

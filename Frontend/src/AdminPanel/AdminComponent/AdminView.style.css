@@ -1,0 +1,318 @@
+/* General Styles */
+.admin-dashboard-view {
+    padding: 20px;
+    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd; /* Add border to the entire table */
+}
+
+.table th,
+.table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Add border between rows */
+}
+
+.table th {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-right: 1px solid #ddd; /* Add border to the right of table headers */
+}
+
+.table td {
+    border-right: 1px solid #ddd; /* Add border to the right of table cells */
+}
+
+.table tr:last-child td {
+    border-bottom: none; /* Remove bottom border from the last row */
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* General Styles */
+.icon-button {
+    background: none; /* No background for a clean look */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 15px; /* Adjust icon size */
+    color: #007bff; /* Default icon color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transitions */
+    display: flex; /* Align icon centrally */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+}
+
+.icon-button:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+.icon-button:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.icon-button:active {
+    transform: scale(0.95); /* Slightly scale down on click for feedback */
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex; 
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.view-button {
+    color: #17a2b8; /* Teal color for view button */
+}
+
+.edit-button {
+    color: #28a745; /* Green color for edit button */
+}
+
+.delete-button {
+    color: #dc3545; /* Red color for delete button */
+}
+
+/* Image Styles */
+img {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Content Styles */
+.content-container {
+    margin-bottom: 20px;
+}
+
+.content-toggle {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.content-toggle:hover {
+    color: #0056b3;
+}
+
+/* Modal Styles */
+.Modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-height: 90vh; /* Limit the maximum height to 90% of the viewport height */
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 1050;
+    overflow: auto; /* Enable scrolling if content overflows */
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1040;
+}
+
+.Modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Modal form label {
+    font-weight: 600;
+    color: #555;
+}
+
+.Modal form input[type="text"],
+.Modal form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.Modal form input[type="text"]:focus,
+.Modal form textarea:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    outline: none;
+}
+
+.Modal form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.Modal .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.Modal .form-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Modal .form-buttons button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.Modal .form-buttons button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.Modal .form-buttons button[type="button"] {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.Modal .form-buttons button[type="button"]:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Form Group Row */
+.form-group-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group-row .form-group {
+    flex: 1; /* Allow both fields to take equal width */
+}
+
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px; /* Adjusted padding for better appearance */
+    margin: 0 5px; /* Increased margin for better spacing */
+    cursor: pointer;
+    font-size: 16px; /* Slightly larger font size for better readability */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.pagination-button:disabled {
+    background-color: #e0e0e0;
+    color: #6c757d; /* Lighter color for disabled state */
+    cursor: not-allowed;
+}
+
+.pagination-button:not(:disabled):hover {
+    background-color: #0056b3;
+}
+
+.pagination-button:first-child {
+    border-radius: 5px 0 0 5px; /* Rounded corners for first button */
+}
+
+.pagination-button:last-child {
+    border-radius: 0 5px 5px 0; /* Rounded corners for last button */
+}
+
+.pagination span {
+    margin: 0 10px; /* Increased margin for better spacing */
+    font-size: 16px; /* Matching font size for consistency */
+    color: #333; /* Darker color for better readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pagination-button {
+        padding: 6px 12px; /* Adjusted padding for smaller screens */
+        font-size: 14px; /* Smaller font size for better fit */
+    }
+
+    .pagination span {
+        font-size: 14px; /* Smaller font size for better fit */
+    }
+}
+
+.picture-preview {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+
+  .filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .filter-container label {
+    margin-right: 10px;
+  }
+  
+  #date-filter {
+    padding: 5px;
+    font-size: 1em;
+  }
+  

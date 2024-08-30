@@ -1,0 +1,118 @@
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+.footer {
+    background-color: #f1f1f1;
+    /* Adjust according to your design */
+    color: #000;
+    padding: 20px 0;
+    font-family: 'SolaimanLipi', sans-serif;  
+}
+
+.footer-top {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.footer-editor h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-mid {
+    padding: 10px 0;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Create 3 columns */
+    gap: 10px;
+    /* Adjust the gap between items */
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px;
+}
+
+.footer-links li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-links li a.text-danger {
+    color: #d9534f;
+}
+
+
+.app-info h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.app-buttons a img {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-links li {
+    display: inline;
+}
+
+.social-links li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    background-color: #f5f5f5;
+    /* Adjust to your desired color */
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+    /* Adjust or remove if not needed */
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.footer-bottom-links li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.footer-bottom-links li a {
+    text-decoration: none;
+    color: #333;
+    /* Adjust to your desired color */
+    font-weight: 500;
+}
+
+.footer-bottom-links li a:hover {
+    color: #c00;
+    /* Adjust the hover color */
+}
+
+.copyright {
+    color: #777;
+    /* Adjust to your desired color */
+    font-size: 14px;
+}

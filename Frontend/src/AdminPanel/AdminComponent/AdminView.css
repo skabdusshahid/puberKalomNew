@@ -1,0 +1,83 @@
+.admin-dashboard-view {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.admin-dashboard-view h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Reduced padding */
+    margin: 0 3px; /* Reduced margin */
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size */
+}
+
+.pagination-button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.pagination-button:not(:disabled):hover {
+    background-color: #0056b3;
+}
+
+.pagination span {
+    margin: 0 5px; /* Reduced margin */
+    font-size: 14px; /* Smaller font size */
+}
+
+.picture-preview {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+ 
+  

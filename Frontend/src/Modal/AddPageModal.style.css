@@ -1,0 +1,31 @@
+/* Overlay style */
+.add-category-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow: auto; /* Change 'scroll' to 'auto' */
+}
+
+.addPagesDescription {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    width: 100%;
+}
+
+/* Modal content style */
+.add-category-modal {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    overflow-y: auto; /* Add overflow-y property */
+}

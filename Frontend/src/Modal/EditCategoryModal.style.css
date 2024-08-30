@@ -1,0 +1,22 @@
+/* EditCategoryModal.style.css */
+.Modal {
+    /* Your modal styles here */
+}
+
+.Overlay {
+    /* Your overlay styles here */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.list-group-item {
+    margin-bottom: 5px;
+}

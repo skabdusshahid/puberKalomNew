@@ -1,0 +1,114 @@
+.reporter-list-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .reporter-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .reporter-table th,
+  .reporter-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .reporter-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .reporter-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .reporter-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .edit-btn, .delete-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+  }
+  
+  .delete-btn:hover {
+    background-color: #da190b;
+  }
+  
+  .custom-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 90%;
+    width: 400px;
+  }
+  
+  .edit-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .edit-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .edit-form button[type="button"] {
+    background-color: #f44336;
+  }
+  
+  .edit-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .edit-form button[type="button"]:hover {
+    background-color: #da190b;
+  }
+  
+  @media (max-width: 768px) {
+    .reporter-list-container {
+      padding: 10px;
+    }
+  
+    .custom-modal {
+      width: 90%;
+    }
+  }
+  

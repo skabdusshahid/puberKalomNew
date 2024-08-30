@@ -14,7 +14,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // MongoDB connection
 const DB = 'mongodb+srv://abdusshahid11399:3QppeRMJJ15VCkwE@cluster0.w3xas7k.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Cluster0';
-//const DB = 'mongodb://localhost:27017/ttst'; 
 mongoose.connect(DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

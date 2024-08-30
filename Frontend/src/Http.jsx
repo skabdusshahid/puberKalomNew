@@ -1,2 +1,2 @@
-const Http="http://localhost:5000";
+const Http="https://puber-kalom-new.vercel.app";
 export default Http;

@@ -90,9 +90,14 @@
 }
 
 @media (max-width: 768px) {
-  .card {
-    flex: 0 0 100%;
-    margin-bottom: 1.5rem;
+  .services-container {
+    margin: 0; /* Remove margin for mobile view */
+    padding: 0; /* Remove padding for mobile view */
+  }
+
+  .cards-container {
+    padding: 0; /* Remove padding for mobile view */
+    gap: 1rem; /* Adjust gap between cards for mobile view */
   }
 
   .card-title {
@@ -101,5 +106,13 @@
 
   .card-text {
     font-size: 0.75rem;
+  }
+
+  .card-content {
+    padding: 10px; /* Reduce padding inside cards for mobile view */
+  }
+
+  .card-img {
+    height: 120px; /* Adjust image height for mobile view */
   }
 }

@@ -48,7 +48,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="https://puber-kalom-new.vercel.app/adminlogin" element={<AdminLogin />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
           <Route
             path="/adminDashboard"
             element={

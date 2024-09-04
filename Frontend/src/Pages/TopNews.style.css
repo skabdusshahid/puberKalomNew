@@ -7034,3 +7034,36 @@ ul.footer-social li a:hover {
     background-color: rgba(44, 42, 42, 0.5); 
   }
   
+/* TopNews.style.css */
+
+/* Skeleton for carousel image */
+.skeleton-carousel-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skeleton-carousel-image .react-loading-skeleton {
+    width: 100%;
+    height: 450px;
+  }
+  
+  /* Skeleton for carousel caption */
+  .skeleton-carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .skeleton-carousel-caption .react-loading-skeleton {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+  }
+  
+
+

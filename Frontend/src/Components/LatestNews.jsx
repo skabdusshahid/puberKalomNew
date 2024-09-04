@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
-import { formatDistanceToNow } from 'date-fns';
+import Skeleton from 'react-loading-skeleton';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
-import './LatestNews.style.css'
+import { formatDistanceToNow } from 'date-fns'; // Import here
 import Http from '../Http';
+
+import './LatestNews.style.css';
 
 const LatestNews = () => {
   const [topNews, setTopNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
   const observerRef = useRef(null);
-
   const navigate = useNavigate();
 
   const fetchTopNews = async (page) => {
@@ -35,6 +36,8 @@ const LatestNews = () => {
       setTopNews((prevNews) => [...prevNews, ...response.data.forms]);
     } catch (error) {
       console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,22 +88,35 @@ const LatestNews = () => {
       </Col>
       <div className="item-box-light-md-less30">
         <Row>
-          {topNews.map((item, index) => (
-            <Col key={index} xl={12} lg={6} md={6} sm={12}>
-              <Card className="news-card" onClick={() => handleCarouselClick(item._id)}>
-                <Card.Img variant="top" src={getPictureUrl(item.picture)} className="news-card-img" />
-                <Card.Body className="news-card-body">
-                  <Card.Title className="news-card-title">
-                    {item.title.length > 70 ? `${item.title.substring(0, 70)}...` : item.title}
-                  </Card.Title>
-                  <span className="news-card-date">
-                    {formatDistanceToNow(new Date(item.date), { addSuffix: true })}
-                    &nbsp; ||&nbsp; {item.category}
-                  </span>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+          {loading ? (
+            Array.from({ length: 5 }).map((_, index) => (
+              <Col key={index} xl={12} lg={6} md={6} sm={12}>
+                <Card className="news-card">
+                  <Skeleton height={200} />
+                  <Card.Body className="news-card-body">
+                    <Skeleton count={2} />
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))
+          ) : (
+            topNews.map((item, index) => (
+              <Col key={index} xl={12} lg={6} md={6} sm={12}>
+                <Card className="news-card" onClick={() => handleCarouselClick(item._id)}>
+                  <Card.Img variant="top" src={getPictureUrl(item.picture)} className="news-card-img" />
+                  <Card.Body className="news-card-body">
+                    <Card.Title className="news-card-title">
+                      {item.title.length > 70 ? `${item.title.substring(0, 70)}...` : item.title}
+                    </Card.Title>
+                    <span className="news-card-date">
+                      {formatDistanceToNow(new Date(item.date), { addSuffix: true })}
+                      &nbsp; ||&nbsp; {item.category}
+                    </span>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))
+          )}
           <div ref={observerRef} style={{ height: '20px' }}></div>
         </Row>
       </div>

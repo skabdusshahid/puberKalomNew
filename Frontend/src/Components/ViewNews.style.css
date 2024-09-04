@@ -91,7 +91,7 @@
 @media (max-width: 1024px) {
   .ViewNews {
     flex-direction: column;
-    margin: 20px;
+    margin: 0;
   }
 
   .singleNews {
@@ -101,7 +101,7 @@
 
   .latestNews {
     width: 100%;
-    margin: 15px 0;
+    margin: 10px 0;
   }
 
   .date, .share {
@@ -124,11 +124,12 @@
   }
 
   .titleNews h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .content {
-    font-size: 1em;
+    font-size: 0.8em;
+    padding: 5px;
   }
 
   .picture img {
@@ -136,15 +137,15 @@
   }
 
   .latestNews {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .share {
-    gap: 8px;
+    gap: 7px;
   
   }
 
   .share svg {
-    font-size: 1.2em; /* Adjust icon size */
+    font-size: 1em; /* Adjust icon size */
   }
 }

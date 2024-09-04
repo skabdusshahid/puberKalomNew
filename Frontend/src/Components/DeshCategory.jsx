@@ -60,19 +60,19 @@ const DeshCategory = ({ categoryName }) => {
   };
 
   return (
-    <div id="services" className="services-container" style={{margin:"10px 80px"}}>
+    <div id="services" className="DeshServices-container">
       <section className="services-section">
         <div className="section-header">
           <h2 className="section-title">{categoryName}</h2>
           <div className="section-divider"></div>
         </div>
 
-        <div className="cards-container">
+        <div className="DeshCards-container">
           {forms.length > 0 ? (
             forms.map(form => (
               <div key={form._id} className="card" onClick={() => handleCarouselClick(form._id)}>
-                <img alt="card img" className="card-img" src={form.picture} />
-                <div className="card-content">
+                <img alt="card img" className="NewsCard-img" src={form.picture} />
+                <div className="DeshCard-content">
                   <h2 className="card-title" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(form.title) }}></h2>
                   <p className="card-text"
                     dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(truncateText(removeImageTags(form.content), 30)) }}

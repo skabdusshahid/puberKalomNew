@@ -1,8 +1,9 @@
-.services-container {
+.DeshServices-container {
   background-color: #f7fafc;
   margin: 1rem 0;
   padding: 20px;
   transition: all 0.4s ease-in-out;
+  margin: 10px 80px;
 }
 
 .services-section {
@@ -28,7 +29,7 @@
   margin: 0.5rem auto;
 }
 
-.cards-container {
+.DeshCards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
@@ -50,7 +51,7 @@
   transform: translateY(-5px);
 }
 
-.card-img {
+.NewsCard-img {
   width: 100%;
   height: 150px;
   object-fit: cover;
@@ -61,7 +62,7 @@
   transform: scale(1.1);
 }
 
-.card-content {
+.DeshCard-content {
   padding: 15px;
 }
 
@@ -90,14 +91,16 @@
 }
 
 @media (max-width: 768px) {
-  .services-container {
+  .DeshServices-container {
     margin: 0; /* Remove margin for mobile view */
     padding: 0; /* Remove padding for mobile view */
   }
 
-  .cards-container {
+  .DeshCards-container {
     padding: 0; /* Remove padding for mobile view */
-    gap: 1rem; /* Adjust gap between cards for mobile view */
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* Adjust gap between cards for mobile view */
   }
 
   .card-title {
@@ -107,12 +110,23 @@
   .card-text {
     font-size: 0.75rem;
   }
-
-  .card-content {
-    padding: 10px; /* Reduce padding inside cards for mobile view */
+  p{
+    margin-bottom: 0;
   }
 
-  .card-img {
-    height: 120px; /* Adjust image height for mobile view */
+  .DeshCard-content {
+    padding: 5px; /* Reduce padding inside cards for mobile view */
+  }
+
+  .NewsCard-img {
+    height: 55px; /* Adjust image height for mobile view */
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .DeshCards-container {
+      grid-template-columns: repeat(2, 1fr);
   }
 }

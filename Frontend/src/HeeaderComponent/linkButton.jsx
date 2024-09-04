@@ -18,6 +18,7 @@ const LinkButtons = () => {
   const [links] = useState([
     { url: 'https://epaper.puberkalom.com/', title: 'ই-পেপার' },
     { url: 'https://www.bd-pratidin.com/en/', title: 'English' },
+    { url: 'http://localhost:5173/adminlogin', title: 'Admin' },
     
 
   ]);
@@ -27,6 +28,7 @@ const LinkButtons = () => {
       {links.map((link, index) => (
         <LinkButton key={index} url={link.url} title={link.title} />
       ))}
+      
     </div>
   );
 };

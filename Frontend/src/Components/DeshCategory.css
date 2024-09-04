@@ -92,7 +92,7 @@
 
 @media (max-width: 768px) {
   .DeshServices-container {
-    margin: 0; /* Remove margin for mobile view */
+    margin: 5px; /* Remove margin for mobile view */
     padding: 0; /* Remove padding for mobile view */
   }
 

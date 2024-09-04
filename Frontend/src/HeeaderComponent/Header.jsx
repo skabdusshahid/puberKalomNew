@@ -17,6 +17,7 @@ import axios from "axios";
 
 function Header() {
 
+
  // const [newsItems, setNewsItems] = useState([]);
   
 
@@ -90,6 +91,7 @@ function Header() {
               </div>
               <Logo />
               <LinkButtons />
+              
             </div>
 
           </header>

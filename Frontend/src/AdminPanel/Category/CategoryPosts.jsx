@@ -353,19 +353,19 @@ const CategoryPost = ({catName}) => {
 
   return (
    <HomeLayoutAlternative>
-       <div id="services" className="services-container mx-5">
+       <div id="services" className="DeshServices-container">
       <section className="services-section pb-0 mb-0">
         <div className="section-header pb-0 mb-0">
           <h2 className="section-title pb-0 mb-0">{categoryName}</h2>
           <div className="section-divider pt-0 mt-0"></div>
         </div>
 
-        <div className="cards-container">
+        <div className="DeshCards-container">
           {forms.length > 0 ? (
             forms.map(form => (
               <div key={form._id} className="card" onClick={() => handleCarouselClick(form._id)}>
                 <img alt="card img" className="card-img" src={form.picture} />
-                <div className="card-content">
+                <div className="DeshCard-content">
                   <h2 className="card-title" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(form.title) }}></h2>
                   <p className="card-text"
                     dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(truncateText(removeImageTags(form.content), 30)) }}

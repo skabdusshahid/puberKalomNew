@@ -1,12 +1,13 @@
-.services-container {
-  background-color: #f9fafb;
-  margin: 0.8rem 0;
-  padding: 15px;
+.DeshServices-container {
+  background-color: #f7fafc;
+  margin: 1rem 0;
+  padding: 20px;
   transition: all 0.4s ease-in-out;
+  margin: 10px 80px;
 }
 
 .services-section {
-  animation: fadeIn 0.6s ease-in-out;
+  animation: zoom-in-down 0.6s ease-in-out;
 }
 
 .section-header {
@@ -15,118 +16,91 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
-  color: #1f2937;
+  font-size: 2rem;
+  color: #1e3a8a;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 0.1em;
 }
 
 .section-divider {
-  width: 60px;
-  height: 4px;
-  background-color: #3b82f6;
+  width: 9rem;
+  height: 2px;
+  background-color: #1e3a8a;
   margin: 0.5rem auto;
 }
 
-.cards-container {
+.DeshCards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
   padding: 0 1rem;
 }
 
 .card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
   cursor: pointer;
-  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #4a5568;
+  color: #fff;
+  transform: translateY(-5px);
 }
 
-.card-img {
+.NewsCard-img {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
-  border-bottom: 2px solid #3b82f6;
 }
 
 .card:hover .card-img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-.card-content {
-  padding: 0 20px;
+.DeshCard-content {
+  padding: 15px;
 }
 
 .card-title {
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
   margin-top: 10px;
   text-align: center;
-  color: #1f2937;
 }
 
 .card-text {
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 0.875rem;
+  font-weight: 500;
   text-align: justify;
-  margin-top: 10px;
-  color: #6b7280;
 }
 
-@keyframes fadeIn {
+@keyframes zoom-in-down {
   from {
+    transform: scale(0.8);
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
+    transform: scale(1);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Adjustments for tablets and smaller devices */
-@media (max-width: 1024px) {
-  .services-container{
-    margin: 0;
-    padding:  0;
-  }
-  .cards-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
-  .card-title {
-    font-size: 1.25rem;
-  }
-
-  .card-text {
-    font-size: 0.85rem;
-  }
-}
-
-/* Adjustments for mobile devices */
 @media (max-width: 768px) {
-  .services-container{
-    margin: 0;
-    padding:  0;
-  }
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0;
-    margin: 0;
+  .DeshServices-container {
+    margin: 5px; /* Remove margin for mobile view */
+    padding: 0; /* Remove padding for mobile view */
   }
 
-  .card {
-    height: auto;
+  .DeshCards-container {
+    padding: 0; /* Remove padding for mobile view */
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* Adjust gap between cards for mobile view */
   }
 
   .card-title {
@@ -134,67 +108,25 @@
   }
 
   .card-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+  p{
+    margin-bottom: 0;
   }
 
-  .card-img {
-    height: 150px; /* Adjust as needed */
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {.services-container{
-  margin: 0;
-  padding:  0;
-}
-
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
+  .DeshCard-content {
+    padding: 5px; /* Reduce padding inside cards for mobile view */
   }
 
-  .card-title {
-    font-size: 0.9rem;
-  }
-
-  .card-text {
-    font-size: 0.7rem;
-  }
-
-  .card-img {
-    height: 120px; /* Adjust as needed */
+  .NewsCard-img {
+    height: 55px; /* Adjust image height for mobile view */
   }
 }
 
 
-  
-  /* @media (max-width: 350px) {
-    .cards-container {
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      padding: 0;
-      margin: 0;
-    }
-   
-    .cards-container {
+
+@media (max-width: 480px) {
+  .DeshCards-container {
       grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      padding: 0;
-      margin: 0;
-    }
-  
-    .services-container {
-      padding: 0!important;
-      margin: 0 !important;
-    }
-  
-    .card-title {
-      font-size: 0.85rem;
-    }
-  
-    .card-text {
-      font-size: 0.7rem;
-    }
-
-    
-    
   }
-   */
+}

@@ -96,7 +96,7 @@ const HomeCategory = ({ categoryName }) => {
             <a className="row item-link" onClick={() => handleCarouselClick(forms[0]._id)}>
               <div className="col-md-5 text">
                 <p className="pt-2" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(forms[0].title) }}></p>
-                <p className="mt-2" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(truncateText(removeImageTags(forms[0].content), 30)) }}></p>
+                {/* <p className="mt-2" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(truncateText(removeImageTags(forms[0].content), 30)) }}></p> */}
               </div>
               <div className="col-md-7 pe-0">
                 <img alt="card img" className="card-img" src={forms[0].picture} />

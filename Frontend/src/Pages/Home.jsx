@@ -104,6 +104,8 @@ const Home = () => {
   return (
     <HomeLayout>
       {/* <BreakingNewsTicker newsItems={newsItems} /> */}
+
+      
       <TopNews />
        <DeshCategory categoryName=" দেশ " />
        <CategoryWise categoryName=" মহানগর " />

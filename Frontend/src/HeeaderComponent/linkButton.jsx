@@ -29,10 +29,11 @@ const LinkButtons = () => {
 
   return (
     <div className="col-md-4 d-flex align-items-center justify-content-end gap-2">
+       <button style={{maxWidth:'50px',maxHeight:"25px", fontSize:"12px", display:"flex", alignItems:"center", justifyContent:"center"}} onClick={()=> navigate("/adminlogin")}>Admin</button>
+
       {links.map((link, index) => (
         <LinkButton key={index} url={link.url} title={link.title} />
       ))}
-       <button style={{maxWidth:'50px',maxHeight:"25px", fontSize:"12px", display:"flex", alignItems:"center", justifyContent:"center"}} onClick={()=> navigate("/adminlogin")}>Admin</button>
     </div>
   );
 };

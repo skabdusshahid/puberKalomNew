@@ -31,7 +31,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReporterList from './AdminPanel/AdminComponent/ReporterList';
 // import TestLayout from './Layout/TestLayout';
- import Http from './Http';
+import Http from './Http';
+import HomeLayout from './Layout/HomeLayout';
+import HomeLayoutAlternative from './Layout/HomeLayoutAlternative';
 
 
 function App() {
@@ -102,14 +104,14 @@ function App() {
           <Route element={<MasterProtectRoute />}>
 
 
-          <Route
-            path="/adminDashboardView"
-            element={
-              <AdminLayout>
-                element={<AdminDashboardView />}
-              </AdminLayout>
-            }
-          />
+            <Route
+              path="/adminDashboardView"
+              element={
+                <AdminLayout>
+                  element={<AdminDashboardView />}
+                </AdminLayout>
+              }
+            />
 
 
             <Route
@@ -148,12 +150,24 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* <Route path="/reporterL" element={<TestLayout>element={<ReporterList />}</TestLayout>} /> */}
+          <Route
+            path={`/news/:id`}
+            element={
+              <HomeLayoutAlternative>
+                <ViewNews />
+              </HomeLayoutAlternative>
+            }
+          />
 
-          <Route path={`/news/:id`} element={<ViewNews />} />
 
 
           {data && data.map((item, index) => {
-            return <Route key={index} path={`/category/${item._id}`} element={<CategoryPosts catName={item.itemName} />} />
+            return <Route key={index} path={`/category/${item._id}`}
+              element={
+                <HomeLayoutAlternative>
+                  <CategoryPosts catName={item.itemName} />
+                </HomeLayoutAlternative>
+              } />
           })}
 
 

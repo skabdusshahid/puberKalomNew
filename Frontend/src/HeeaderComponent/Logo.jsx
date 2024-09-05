@@ -8,7 +8,7 @@ const Logo = () => {
           className="img-fluid"
           src="https://www.puberkalom.com/upload/images/logo/puber-kalom.png"
           alt="Puber Kalom Logo"
-          style={{ width: "250px" }}
+          style={{ width: "250px", border:"white" }}
         />
       </Link>
     </div>

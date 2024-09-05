@@ -1,37 +1,37 @@
 import { useEffect, useState } from "react";
 
-import Http from "./Http";
-
 const FeedComponent = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchRSS = async () => {
       try {
-        const response = await fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://puberkalom.com/feed"));
+        const response = await fetch("https://cors-anywhere.herokuapp.com/https://puberkalom.com/feed", {
+          headers: {
+            "x-requested-with": "XMLHttpRequest",
+          },
+        });
+    
         if (!response.ok) {
-          throw new Error("Failed to fetch the RSS feed");
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        
-        const data = await response.json();
-        const textResponse = data.contents; // Get the raw RSS feed content
-      
+    
+        const textResponse = await response.text();
         const parser = new DOMParser();
         const xml = parser.parseFromString(textResponse, "application/xml");
-      
-        // Handle parsing errors
+    
         const parseError = xml.getElementsByTagName("parsererror");
         if (parseError.length) {
           console.error("Error while parsing XML:", parseError);
           return;
         }
-      
+    
         const itemsArray = Array.from(xml.getElementsByTagName("item")).map((item) => {
           const getValue = (tag) => {
             const el = item.getElementsByTagName(tag)[0];
             return el ? el.textContent : "";
           };
-      
+    
           const getCDATAValue = (tag) => {
             const el = item.getElementsByTagName(tag)[0];
             if (el && el.childNodes.length > 0) {
@@ -43,70 +43,67 @@ const FeedComponent = () => {
             }
             return "";
           };
-      
+    
           const title = getCDATAValue("title");
           const pubDate = getValue("pubDate");
           const category = getValue("category");
           const guid = getValue("guid");
           const author = getCDATAValue("author");
-      
-          // Extract image URL from description
+    
           const description = getCDATAValue("description");
           const imgRegex = /<img src="(.*?)"/;
           const imgMatch = description.match(imgRegex);
           const imageUrl = imgMatch ? imgMatch[1] : "";
-      
+    
           return {
             title,
             category,
             date: pubDate,
-            content: description, // Using description as content
+            content: description,
             picture: imageUrl,
-            tags: [], // Add tags if you have any logic to extract or generate them
+            tags: [],
             reporterName: author,
             guid,
-            location: "", // Default location or extract if available
+            location: "",
           };
         });
-      
+    
         setItems(itemsArray);
-      
-        // Send data to the server in chunks
-        const chunkSize = 10; // Adjust chunk size as needed
+    
+        const chunkSize = 10;
         for (let i = 0; i < itemsArray.length; i += chunkSize) {
           const chunk = itemsArray.slice(i, i + chunkSize);
-      
-          try {
-            const postData = async () => {
-              const response = await fetch(`${Http}/admin-dashboard`, {
+    
+          const postData = async () => {
+            try {
+              const response = await fetch("http://localhost:5000/admin-dashboard", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify(chunk), // Sending the data in chunks to the server
+                body: JSON.stringify(chunk),
               });
-      
+    
               if (!response.ok) {
-                throw new Error("Failed to post data");
+                throw new Error(`HTTP error! Status: ${response.status}`);
               }
-      
+    
               const result = await response.json();
-              console.log(result.message); // Log the server response message
               if (result.details) {
-                result.details.forEach((detail) => console.log(detail)); // Log individual messages for added or skipped items
+                // Handle details if necessary
               }
-            };
-      
-            await postData();
-          } catch (error) {
-            console.error("Error posting feed data:", error);
-          }
+            } catch (error) {
+              console.error("Error posting feed data:", error);
+            }
+          };
+    
+          postData();
         }
       } catch (error) {
         console.error("Error fetching RSS feed:", error);
       }
-      
     };
+    
 
     fetchRSS();
 

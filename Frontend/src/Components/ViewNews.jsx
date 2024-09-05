@@ -6,7 +6,7 @@ import LatestNews from './LatestNews';
 import { FaFacebook, FaWhatsapp, FaCalendarAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './ViewNews.style.css';
-import HomeLayoutAlternative from '../Layout/HomeLayoutAlternative';
+// import HomeLayoutAlternative from '../Layout/HomeLayoutAlternative';
 import RelatedNews from './RelatedNews';
 import Http from '../Http';
 
@@ -48,7 +48,7 @@ function CategoryComponent() {
   const formattedDate = newsDate.toLocaleDateString('bn-BD', options);
 
   return (
-    <HomeLayoutAlternative>
+   
       <motion.div 
         className='ViewNews'
         initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,6 @@ function CategoryComponent() {
           <RelatedNews category={newsDetail.category} />
         </motion.div>
       </motion.div>
-    </HomeLayoutAlternative>
   );
 }
 

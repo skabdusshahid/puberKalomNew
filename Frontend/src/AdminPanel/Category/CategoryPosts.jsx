@@ -352,7 +352,7 @@ const CategoryPost = ({catName}) => {
   };
 
   return (
-   <HomeLayoutAlternative>
+   
        <div id="services" className="DeshServices-container">
       <section className="services-section pb-0 mb-0">
         <div className="section-header pb-0 mb-0">
@@ -379,7 +379,7 @@ const CategoryPost = ({catName}) => {
         </div>
       </section>
     </div>
-   </HomeLayoutAlternative>
+   
   );
 };
 

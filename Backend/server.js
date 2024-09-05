@@ -592,6 +592,22 @@ app.get('/menubar/:id', async (req, res) => {
   }
 });
 
+app.post('/api/translate', async (req, res) => {
+  const { text, targetLanguage } = req.body;
+
+  try {
+    const response = await axios.post(`https://translation.googleapis.com/language/translate/v2`, {
+      q: text,
+      target: targetLanguage,
+      key: 'YOUR_GOOGLE_API_KEY' // Replace with your API key
+    });
+
+    res.json({ translatedText: response.data.data.translations[0].translatedText });
+  } catch (error) {
+    res.status(500).send('Error with translation service');
+  }
+});
+
 
 
 
